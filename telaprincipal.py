@@ -16,7 +16,6 @@ frame2 = Frame(restaurante,width = 1700, height = 45,bg='yellow')#subtitulos
 frame2.pack()
 
 
-
 frame3 = Frame(restaurante,width = 500, height = 800,bg='cyan') #subgrupo sushi
 frame3.place(x= 0, y= 115)
 bordaframe3 = Frame(restaurante,width = 4, height = 800,bg='black')
@@ -28,8 +27,10 @@ frame4.place(x=500,y=115)
 bordaframe4 = Frame(restaurante, width=4, height = 800,bg='black')
 bordaframe4.place(x=997,y=115)
 
+
 frame5 = Frame(restaurante, width = 700, height = 380,bg='cyan') #subgrupo bebidas
 frame5.place(x=1000,y=115)
+
 
 frame6 = Frame(restaurante, width= 700, height = 310,bg='gold') #nota fiscal
 frame6.place(x=1000,y=496)
@@ -259,11 +260,13 @@ def limpar():
 concluir = Button(text='Fechar Pedido', command=fecharpedido)
 concluir.place(x=1000, y = 527)
 
+
 sair = Button(text='Sair do aplicativo', command=sair)
 sair.place(x=1000,y=590)
 
 clean = Button(text='Realizar outro pedido', command = limpar)
 clean.place(x=1000, y = 650)
+
 
 
 

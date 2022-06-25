@@ -3,8 +3,6 @@ from tkinter import * ##biblioteca para abrir a interace
 import modulotelaprincipal
 
 
-
-
 listaemail = []
 listasenha = []
 listanome = []
@@ -24,13 +22,9 @@ def janelacadastro():
     telacadastro.title('EFETUAR CADASTRO')
     telacadastro.configure(bg='black')
     telacadastro.state('zoomed')
-    #fundocadastro = PhotoImage(file='teladecadastro.png')
-    #labelfundocadastro = Label(telacadastro, image=fundocadastro)
-    #labelfundocadastro.pack()
 
     botaoprosseguir = Button(telacadastro,text='Prosseguir para Login',command=telacadastro.destroy)
     botaoprosseguir.place(x= 100, y= 350)
-
 
      ######## LABELS CADASTRO ##########
     titulo = Label(telacadastro, text='CADASTRO PHOENIX SUSHI',font=('Arial',15,'bold'),bg='red')
@@ -47,7 +41,6 @@ def janelacadastro():
 
 
 
-
     ############## CAIXAS DE TEXTO CADASTRO ################
 
     textonome = Entry(telacadastro, bd=3, width = 32, font=('Arial',13,),justify=LEFT)
@@ -58,6 +51,7 @@ def janelacadastro():
 
     textosenha = Entry(telacadastro, bd=3, width=32, font=('Arial',13),justify=LEFT)
     textosenha.place(x=180,y=248)
+
 
     ##FUNÇÃO PARA SALVAR NOME, EMAIL E SENHA NUM "BANCO DE DADOS"
 
@@ -72,17 +66,40 @@ def janelacadastro():
         abrir.write('\n\n')
         abrir.close()
         """
-        sucesso = Label(telacadastro,text='Conta registrada com sucesso! Prossiga para o login clicando no botão abaixo.',font=('Arial',12,'bold'),bg='lightgreen')
-        sucesso.place(x=100, y=300)
+
         inseriremail = textoemail.get()
         inserirsenha = textosenha.get()
         inserirnome = textonome.get()
-        listaemail.append(inseriremail)
-        listasenha.append(inserirsenha)
-        listanome.append(inserirnome)
-        print(listasenha)
-        print(listaemail)
-        print(listanome)
+
+        if inseriremail == "":
+            erro = Label(telacadastro, text='Nenhum campo deve ficar em branco',font=('Arial',12,'bold'),bg='red')
+            erro.place(x=100, y=300)
+            print('erro')
+
+        elif inserirsenha == "":
+            erro = Label(telacadastro, text='Nenhum campo deve ficar em branco',font=('Arial',12,'bold'),bg='red')
+            erro.place(x=100, y=300)
+            print('erro')
+
+        elif inserirnome == "":
+            erro = Label(telacadastro, text='Nenhum campo deve ficar em branco',font=('Arial',12,'bold'),bg='red')
+            erro.place(x=100, y=300)
+            print('erro')
+
+        else:
+            sucesso = Label(telacadastro,
+                            text='Conta registrada com sucesso! Prossiga para o login clicando no botão abaixo.',
+                            font=('Arial', 12, 'bold'), bg='lightgreen')
+            sucesso.place(x=100, y=300)
+            registrar['state'] = DISABLED
+
+
+            listaemail.append(inseriremail)
+            listasenha.append(inserirsenha)
+            listanome.append(inserirnome)
+            print(listasenha)
+            print(listaemail)
+            print(listanome)
 
 
 
@@ -103,7 +120,7 @@ botaoentrar = PhotoImage(file='botaoentrar.png')
 botaocadastrar = PhotoImage(file='botaocadastrar.png')
 
 
-############ caixas de entrada de texto ###########
+############ caixas de entrada de texto para login ###########
 
 email = Entry(janela, bd=3, width=32, font=('Arial',13),justify=LEFT)
 email.place(x=970, y=198)

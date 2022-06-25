@@ -14,6 +14,8 @@ def abrirrestaurante():
 
     frame2 = Frame(restaurante, width=1700, height=45, bg='yellow')  # subtitulos
     frame2.pack()
+    bordaframe2 = Frame(restaurante, width = 1700, height = 2,bg='black')
+    bordaframe2.place(x=0, y=115)
 
     frame3 = Frame(restaurante, width=500, height=800, bg='cyan')  # subgrupo sushi
     frame3.place(x=0, y=115)
@@ -32,6 +34,7 @@ def abrirrestaurante():
     frame6.place(x=1000, y=496)
     bordaframe6 = Frame(restaurante, width=600, height=4, bg='black')
     bordaframe6.place(x=998, y=495)
+
 
     # Label para o nome do restaurante e slogan
 
